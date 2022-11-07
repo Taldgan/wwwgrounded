@@ -23,7 +23,7 @@ def getProducts(request):
 @api_view(['GET'])
 def getProduct(request, pk):
     product = Product.objects.get(_id=pk)
-    serializer /api/products/0/= ProductSerializer(product, many=False)
+    serializer = ProductSerializer(product, many=False)
     return Response(serializer.data)
 
 @api_view(['POST'])
