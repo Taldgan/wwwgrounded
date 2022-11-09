@@ -40,13 +40,20 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     reviews = serializers.SerializerMethodField(read_only=True)
+    image = serializers.SerializerMethodField(read_only=True)
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = ['_id', 'user', 'name', 'image', 'brand', 'category', 'description', 'rating', 'numReviews', 'price', 'countInStock', 'createdAt', 'reviews']
+
     def get_reviews(self, obj):
         reviews = obj.review_set.all()
         serializer = ReviewSerializer(reviews, many=True)
         return serializer.data
+
+    def get_image(self, obj):
+        image = obj.image
+        image = "http://127.0.0.1:8000/static/images/" + str(image)
+        return image
 
 class ShippingAddressSerializer(serializers.ModelSerializer):
     class Meta:
