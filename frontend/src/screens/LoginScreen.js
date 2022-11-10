@@ -23,7 +23,14 @@ function LoginScreen() {
 
   useEffect(() => {
     if(userInfo){
-      navigate(redirect)
+      if(redirect == null){
+        console.log('here')
+        navigate('/')
+      }
+      else{
+        console.log('...or here')
+        navigate('/' + redirect)
+      }
     }
   }, [navigate, userInfo, redirect])
 
