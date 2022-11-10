@@ -52,7 +52,7 @@ def getUserProfile(request):
     serializer = UserSerializer(user, many=False)
     return Response(serializer.data)
 
-@api_view(['POST'])
+@api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def updateUserProfile(request):
     user = request.user
