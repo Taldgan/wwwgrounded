@@ -57,16 +57,25 @@ class ProductSerializer(serializers.ModelSerializer):
 
 class ShippingAddressSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Product
+        model = ShippingAddress
         fields = '__all__'
 
 class OrderItemSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = OrderItem
-        fields = '__all__'
+        fields = ['product', 'order', 'name', 'qty', 'price', 'image', '_id']
+
+
+    def get_image(self, obj):
+        image = obj.image
+        image = "http://127.0.0.1:8000/static/" + str(image)
+        return image
+
 
 class OrderSerializer(serializers.ModelSerializer):
-    orders = serializers.SerializerMethodField(read_only=True)
+    orderItems = serializers.SerializerMethodField(read_only=True)
     shippingAddress = serializers.SerializerMethodField(read_only=True)
     user = serializers.SerializerMethodField(read_only=True)
 
@@ -74,7 +83,7 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         fields = '__all__'
 
-    def get_orders(self, obj):
+    def get_orderItems(self, obj):
         items = obj.orderitem_set.all()
         serializer = OrderItemSerializer(items, many=True)
         return serializer.data
@@ -90,4 +99,3 @@ class OrderSerializer(serializers.ModelSerializer):
         user = obj.user
         serializer = UserSerializer(user, many=False)
         return serializer.data
-

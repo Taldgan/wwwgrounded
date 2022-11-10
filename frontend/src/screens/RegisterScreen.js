@@ -55,6 +55,7 @@ function RegisterScreen(){
           onChange={(e) => setName(e.target.value)}
         >
           </Form.Control>
+        </Form.Group>
           <Form.Group controlId='email'>
             <Form.Label>Email Address</Form.Label>
             <Form.Control
@@ -66,7 +67,6 @@ function RegisterScreen(){
           >
             </Form.Control>
           </Form.Group>
-        </Form.Group>
         <Form.Group controlId='password'>
           <Form.Label>Password</Form.Label>
           <Form.Control

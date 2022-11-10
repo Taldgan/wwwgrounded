@@ -50,11 +50,11 @@ def addOrderItems(request):
                     image=product.image.url,
                     )
         # (4) Update related product stock
-        product.countInStock -= item.qty
+        product.countInStock -= int(item.qty)
         product.save()
 
-    serializer = OrderItemSerializer(order, many=False)
-    return Response(serializer.data)
+        serializer = OrderSerializer(order, many=False)
+        return Response(serializer.data)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -68,12 +68,11 @@ def getMyOrders(request):
 @permission_classes([IsAuthenticated])
 def getOrderById(request, pk):
     user = request.user
-    order = Order.objects.get(_id=pk)
-
     try:
+        order = Order.objects.get(_id=pk)
         if user.is_staff or order.user == user:
             serializer = OrderSerializer(order, many=False)
-            return serializer.data
+            return Response(serializer.data)
         else:
             Response({'detail':'Not authorized'}, status=status.HTTP_400_BAD_REQUEST)
     except:
