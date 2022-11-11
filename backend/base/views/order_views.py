@@ -91,7 +91,7 @@ def updateOrderToPaid(request, pk):
 
 
 @api_view(['PUT'])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsAdminUser])
 def updateOrderToDelivered(request, pk):
     order = Order.objects.get(_id=pk)
 
@@ -101,3 +101,9 @@ def updateOrderToDelivered(request, pk):
 
     return Response('Order was delivered')
 
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def getOrders(request):
+    orders = Order.objects.all()
+    serializer = OrderSerializer(orders, many=True)
+    return Response(serializer.data)
