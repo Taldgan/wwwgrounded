@@ -21,6 +21,13 @@ def getProducts(request):
     return Response(serializer.data)
 
 @api_view(['GET'])
+def getTopProducts(request):
+    
+    products = Product.objects.all().order_by('-createdAt')[0:5]
+    serializer = ProductSerializer(products, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
 def getProduct(request, pk):
     product = Product.objects.get(_id=pk)
     serializer = ProductSerializer(product, many=False)
