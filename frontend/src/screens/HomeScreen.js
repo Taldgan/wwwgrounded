@@ -28,7 +28,7 @@ function HomeScreen(){
   return (
     <div>
       {!keyword && <ProductCarousel />}
-      <h1>Latest Products</h1>
+      <h1>Our Coffee </h1>
       {loading ? <Loader />
           : error ? <Message variant='dark'>{error}</Message>
           :
