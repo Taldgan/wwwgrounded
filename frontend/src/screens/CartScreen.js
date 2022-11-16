@@ -36,7 +36,7 @@ function CartScreen() {
       <Col md={8}>
         <h1>SHOPPING CART</h1>
         {cartItems.length === 0 ? (
-          <Message>
+          <Message variant='light'>
             Your cart is empty <Link to='/'>Go back</Link>
           </Message>
         ) : (

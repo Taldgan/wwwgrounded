@@ -57,7 +57,7 @@ function RegisterScreen(){
           </Form.Control>
         </Form.Group>
           <Form.Group controlId='email'>
-            <Form.Label>Email Address</Form.Label>
+            <Form.Label className='my-3'>Email Address</Form.Label>
             <Form.Control
             required
             type='email'
@@ -68,7 +68,7 @@ function RegisterScreen(){
             </Form.Control>
           </Form.Group>
         <Form.Group controlId='password'>
-          <Form.Label>Password</Form.Label>
+          <Form.Label className='my-3'>Password</Form.Label>
           <Form.Control
           required
           type='password'
@@ -79,7 +79,7 @@ function RegisterScreen(){
           </Form.Control>
         </Form.Group>
         <Form.Group controlId='passwordConfirm'>
-          <Form.Label>Confirm Password</Form.Label>
+          <Form.Label className='my-3'>Confirm Password</Form.Label>
           <Form.Control
           required
           type='password'
@@ -89,7 +89,7 @@ function RegisterScreen(){
         >
           </Form.Control>
 
-          <Button type='submit' variant='primary'>Register</Button>
+          <Button className='my-3' type='submit' variant='primary'>Register</Button>
         </Form.Group>
         <Row className='py-3'>
           <Col>
