@@ -31,7 +31,7 @@ h3{
 }
 
 .carousel-caption h4 {
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 .carousel img {
@@ -46,6 +46,13 @@ h3{
 
 .carousel a {
 	margin: 0 auto;
+}
+
+.debug-header {
+	padding-right: 10px;
+	width: 50px;
+	height: 50px;
+	object-fit: contain;
 }
 @media (max-width: 900px){
 	.carousel-caption h2 {

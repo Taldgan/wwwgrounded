@@ -21,7 +21,10 @@ function Header(){
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>DEBUG COFFEE</Navbar.Brand>
+            <Navbar.Brand>
+            <img class="debug-header" src={process.env.PUBLIC_URL+"simplified_logo.png"} />
+              DEBUG COFFEE
+              </Navbar.Brand>
           </LinkContainer>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
