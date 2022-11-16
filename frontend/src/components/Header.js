@@ -22,7 +22,7 @@ function Header(){
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
-            <img class="debug-header" src={process.env.PUBLIC_URL+"simplified_logo.png"} />
+            <img class="debug-header" src={process.env.PUBLIC_URL+"simplified_logo_WhiteBlack.png"} />
               DEBUG COFFEE
               </Navbar.Brand>
           </LinkContainer>
@@ -49,6 +49,15 @@ function Header(){
                   <Nav.Link><i className="fas fa-user"></i>Login</Nav.Link>
                 </LinkContainer>
               )}
+
+                <LinkContainer to='/Merch'>
+                  <Nav.Link><i className=""></i>Merch</Nav.Link>
+                </LinkContainer>
+
+                <LinkContainer to='/AboutUs'>
+                  <Nav.Link><i className=""></i>About Us</Nav.Link>
+                </LinkContainer>
+
                 {userInfo && userInfo.isAdmin && (
                   <NavDropdown title='Admin' id='adminmenu'>
                     <LinkContainer to='/admin/userlist'>
