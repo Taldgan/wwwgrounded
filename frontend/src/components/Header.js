@@ -33,7 +33,7 @@ function Header(){
             <Nav className="mr-auto">
 
               <LinkContainer to='/cart'>
-                <Nav.Link ><i className="fas fa-shopping-cart"></i>Cart</Nav.Link>
+                <Nav.Link ><i class="nav_icon"className="fas fa-shopping-cart"></i>Cart</Nav.Link>
               </LinkContainer>
 
               {userInfo ?(
@@ -46,16 +46,15 @@ function Header(){
                 </NavDropdown>
               ) : (
                 <LinkContainer to='/login'>
-                  <Nav.Link><i className="fas fa-user"></i>Login</Nav.Link>
+                  <Nav.Link><i class="nav_icon"className="fas fa-user"></i>Login</Nav.Link>
                 </LinkContainer>
-              )}
-
+              )}                
                 <LinkContainer to='/Merch'>
-                  <Nav.Link><i className=""></i>Merch</Nav.Link>
+                  <Nav.Link><i class="nav_icon" className="fa-solid fa-shirt"></i>Merch</Nav.Link>
                 </LinkContainer>
 
                 <LinkContainer to='/AboutUs'>
-                  <Nav.Link><i className=""></i>About Us</Nav.Link>
+                  <Nav.Link><i class="nav_icon" className="fa-solid fa-circle-info"></i>About Us</Nav.Link>
                 </LinkContainer>
 
                 {userInfo && userInfo.isAdmin && (
