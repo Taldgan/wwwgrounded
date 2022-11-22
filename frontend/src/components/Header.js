@@ -22,8 +22,8 @@ function Header(){
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
-            <img class="debug-header" src={process.env.PUBLIC_URL+"simplified_logo_WhiteBlack.png"} />
-              DEBUG COFFEE
+            <img class="debug-header" src={process.env.PUBLIC_URL+"simplified_logo.png"} />
+            {"{ DEBUG COFFEE }"}
               </Navbar.Brand>
           </LinkContainer>
 
@@ -32,8 +32,12 @@ function Header(){
             <SearchBox/>
             <Nav className="mr-auto">
 
+              <LinkContainer to='/'>
+                <Nav.Link ><i class="nav_icon"className="fas fa-shopping-cart"></i> Home</Nav.Link>
+              </LinkContainer>
+
               <LinkContainer to='/cart'>
-                <Nav.Link ><i class="nav_icon"className="fas fa-shopping-cart"></i>Cart</Nav.Link>
+                <Nav.Link ><i class="nav_icon"className="fas fa-shopping-cart"></i> Cart</Nav.Link>
               </LinkContainer>
 
               {userInfo ?(
@@ -46,15 +50,15 @@ function Header(){
                 </NavDropdown>
               ) : (
                 <LinkContainer to='/login'>
-                  <Nav.Link><i class="nav_icon"className="fas fa-user"></i>Login</Nav.Link>
+                  <Nav.Link><i class="nav_icon"className="fas fa-user"></i> Login</Nav.Link>
                 </LinkContainer>
               )}                
                 <LinkContainer to='/Merch'>
-                  <Nav.Link><i class="nav_icon" className="fa-solid fa-shirt"></i>Merch</Nav.Link>
+                  <Nav.Link><i class="nav_icon" className="fa-solid fa-shirt"></i> Merch</Nav.Link>
                 </LinkContainer>
 
                 <LinkContainer to='/AboutUs'>
-                  <Nav.Link><i class="nav_icon" className="fa-solid fa-circle-info"></i>About Us</Nav.Link>
+                  <Nav.Link><i class="nav_icon" className="fa-solid fa-circle-info"></i> About Us</Nav.Link>
                 </LinkContainer>
 
                 {userInfo && userInfo.isAdmin && (
