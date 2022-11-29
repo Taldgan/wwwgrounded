@@ -34,7 +34,7 @@ function AboutUsScreen(){
       or passion projects, many programmers turn to coffee to help push through
       sleepless nights. The only problem is, drink to much and alert as you may be
       you won't be able to focus. To solve this problem we created our own brand
-      of coffee named Debug Coffee. Our special blend of ingredients not only create
+      of coffee named Grounded Coffee. Our special blend of ingredients not only create
       a great tasting drink, but will keep you focused for longer without the usual
       after effects of drinking to much coffee. With five different coffee blends to
       choose from there's something for everyone to enjoy.</p>

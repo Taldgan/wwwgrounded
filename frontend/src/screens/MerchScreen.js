@@ -12,6 +12,8 @@ function MerchScreen(){
   const productList = useSelector(state => state.productList)
   const {error, loading, products } = productList
 
+  const clothingProducts = products.filter(product => product.category == 'Clothing')
+  const otherProducts = products.filter(product => product.category == 'Other')
   const [searchParams, setSearchParams] = useSearchParams()
 
   let keyword = searchParams.get('keyword')
@@ -26,12 +28,12 @@ function MerchScreen(){
 
   return (
     <div>
-      <h1 className='text-center my-3'>Shirts</h1>
+      <h1 className='text-center my-3'>Clothing</h1>
       {loading ? <Loader />
           : error ? <Message variant='dark'>{error}</Message>
           :
           <Row>
-            {products.map(product => (
+            {clothingProducts.map(product => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                 <Product product={product} />
               </Col>
@@ -40,12 +42,12 @@ function MerchScreen(){
       }
 
       <div>
-        <h1 className='text-center my-3'>Tumblers</h1>
+        <h1 className='text-center my-3'>Mugs and Tumblers</h1>
         {loading ? <Loader />
             : error ? <Message variant='dark'>{error}</Message>
             :
             <Row>
-              {products.map(product => (
+              {otherProducts.map(product => (
                 <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                   <Product product={product} />
                 </Col>

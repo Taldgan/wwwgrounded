@@ -11,6 +11,7 @@ function CoffeeScreen(){
   const dispatch = useDispatch()
   const productList = useSelector(state => state.productList)
   const {error, loading, products } = productList
+  const coffeeProducts = products.filter(product => product.category == 'Roast')
 
   const [searchParams, setSearchParams] = useSearchParams()
 
@@ -26,12 +27,12 @@ function CoffeeScreen(){
 
   return (
     <div>
-      <h1 className='text-center my-3'>Coffee</h1>
+      <h1 className='text-center my-3'>Our Roasts</h1>
       {loading ? <Loader />
           : error ? <Message variant='dark'>{error}</Message>
           :
           <Row>
-            {products.map(product => (
+            {coffeeProducts.map(product => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                 <Product product={product} />
               </Col>

@@ -11,6 +11,7 @@ function ProductCarousel(){
 
   const productTopRated = useSelector(state => state.productTopRated)
   const {error, loading, products} = productTopRated
+  const coffeeProducts = products
 
   useEffect(() =>{
     dispatch(listTopProducts())
@@ -22,7 +23,7 @@ function ProductCarousel(){
     ? <Message variant='danger'>{error}</Message>
     : (
       <Carousel pause='hover' className='bg-light' variant='dark'>
-        {products.map(product => (
+        {coffeeProducts.map(product => (
           <Carousel.Item key={product._id}>
             <Row>
               <Col>

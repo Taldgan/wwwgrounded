@@ -23,7 +23,7 @@ function Header(){
           <LinkContainer to='/'>
             <Navbar.Brand>
             <img class="debug-header" src={process.env.PUBLIC_URL+"simplified_logo.png"} />
-            {"{ DEBUG COFFEE }"}
+            {"GROUNDED COFFEE"}
               </Navbar.Brand>
           </LinkContainer>
 
