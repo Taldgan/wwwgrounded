@@ -128,7 +128,7 @@ export const payOrder = (id, paymentResult) => async (dispatch, getState) => {
     }
 
     const { data } = await axios.put(
-      `http://127.0.0.1:8000/api/orders/${id}/pay`,
+      `http://127.0.0.1:8000/api/orders/${id}/pay/`,
       paymentResult,
       config
     )
