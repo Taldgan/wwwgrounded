@@ -28,7 +28,7 @@ function HomeScreen(){
   return (
     <div>
       {!keyword && <ProductCarousel />}
-      <h1 className='text-center my-3'>Our Coffee </h1>
+      <h1 className='text-center my-3'></h1>
       {loading ? <Loader />
           : error ? <Message variant='dark'>{error}</Message>
           :

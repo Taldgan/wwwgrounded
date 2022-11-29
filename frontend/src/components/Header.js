@@ -33,7 +33,7 @@ function Header(){
             <Nav className="mr-auto">
 
               <LinkContainer to='/'>
-                <Nav.Link ><i class="nav_icon"className="fas fa-shopping-cart"></i> Home</Nav.Link>
+                <Nav.Link ><i class="nav_icon"className="fa-solid fa-house"></i> Home</Nav.Link>
               </LinkContainer>
 
               <LinkContainer to='/cart'>
@@ -52,7 +52,12 @@ function Header(){
                 <LinkContainer to='/login'>
                   <Nav.Link><i class="nav_icon"className="fas fa-user"></i> Login</Nav.Link>
                 </LinkContainer>
-              )}                
+              )}
+
+                <LinkContainer to='/coffee'>
+                  <Nav.Link><i class="nav_icon" className="fa-solid fa-mug-hot"></i> Coffee</Nav.Link>
+                </LinkContainer>              
+
                 <LinkContainer to='/Merch'>
                   <Nav.Link><i class="nav_icon" className="fa-solid fa-shirt"></i> Merch</Nav.Link>
                 </LinkContainer>

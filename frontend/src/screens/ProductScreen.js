@@ -48,7 +48,7 @@ function ProductScreen(){
                 </ListGroup.Item>
 
                 <ListGroup.Item>
-                  Tasting Notes: {product.description}
+                  {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
