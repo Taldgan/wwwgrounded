@@ -1,3 +1,4 @@
+import os.path
 """
 Django settings for backend project.
 
@@ -23,14 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bdii$j(gl!143n6h&2_^uv7b32ubz5g2pc4q)(_gw^tk78fb4y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +44,6 @@ INSTALLED_APPS = [
 
     'base.apps.BaseConfig',
 
-    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -162,6 +163,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+STATIC_ROOT = ''
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
@@ -171,11 +173,12 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = 'static/images'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-]
+#CORS_ALLOWED_ORIGINS = [
+    #'http://localhost:3000',
+    #'http://172.24.49.154:80',
+#]
 
-#CORS_ALLOW_ALL_ORIGINS: True
+CORS_ALLOW_ALL_ORIGINS= True
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
